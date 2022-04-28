@@ -1,8 +1,9 @@
-# python
+# 		python
 
 ## 变量和简单数据类型
 
 - 无定义
+- Python中赋值操作符号“=”的作用是，将对象引用和内存中的某个对象进行绑定。假设对象已经存在，就进行简单的又一次绑定。以便引用“=”右边的对象；假设对象引用尚未存在。就首先创建对象，然后将对象引用和对象进行绑定。
 
 ## 列表简介
 
@@ -54,7 +55,20 @@
   ```
 
 - 复制列表用切片 b = a[:]
+
 - 元组a()类似列表a[]，但元素不可变
+
+- 列表解析
+
+  ```python
+  a=[x for x in range(101) if x%2==0]
+  ```
+
+  x：我们需要的列表里面的结果(1st part)
+
+  for x in range(101):x来源——0~100的数字(2nd part)
+
+  if x%2==0:x成立的条件，如果不成立就不放在列表里了(3rd part)
 
 ## 条件句
 
@@ -555,7 +569,7 @@ argparse.ArgumentParser()
 
   数组转Image：`image = Image.fromarray(array)`
 
-  Image转array：`imgL_array = np.array(image, dtype='float64')`
+  Image转array：`imgL_array = np.array(image, 	)`
 
   注意dtype可以为float、uint、int转换时数值会变化
 
@@ -597,8 +611,14 @@ argparse.ArgumentParser()
   ```python
   cv2.imwrite(file，img，num)
   # num为 1到9 对应不同图像格式
+  
   ```
-
+  
+  ```
+  
+  cv2.imencode('.jpg', im)[1].tofile('E:\测试路径/frameTest.jpg')#英文或中文路径均适用
+  ```
+  
   
 
 ## 并发
@@ -754,3 +774,10 @@ import时
 ```
 python -m Tree.m1
 ```
+
+关于`__init__.py`:
+
+​	在某个package下标识该package为**module package**，即可以导入的package；
+
+​	init中定义导入范围；不定义也可，直接在import语句中写明
+
